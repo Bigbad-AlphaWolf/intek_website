@@ -774,14 +774,14 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
-$databases['default']['default'] = array (
-  'database' => 'inteksi324',
-  'username' => 'inteksi324',
-  'password' => 'Orange221',
-  'prefix' => '',
-  'host' => 'inteksi324.mysql.db',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
+# $databases['default']['default'] = array (
+#  'database' => '',
+#  'username' => '',
+#  'password' => '',
+#  'prefix' => '',
+#  'host' => '',
+#  'port' => '3306',
+#  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+#  'driver' => 'mysql',
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_TlledbIS4xuejMZ5enNSVV175Uv99vLH1VydkXpQTXSx4_Ft_iW0KNUSLjD96-hp4jsnlhDLzg/sync';
