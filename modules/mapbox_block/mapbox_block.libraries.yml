@@ -1,0 +1,19 @@
+mapbox:
+  css:
+    component:
+      /libraries/mapbox-gl-js/mapbox-gl.css: { minified: true }
+  js:
+    /libraries/mapbox-gl-js/mapbox-gl.js: { minified: true }
+
+mapbox_block:
+  css:
+    component:
+      css/mapbox_block.css: { }
+  js:
+    js/mapbox_block.js: { }
+  dependencies:
+    - mapbox_block/mapbox
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

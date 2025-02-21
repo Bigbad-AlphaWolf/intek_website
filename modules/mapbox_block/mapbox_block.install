@@ -1,0 +1,58 @@
+<?php
+/**
+ * @file
+ * Contains library file requirement check and update hooks.
+ */
+
+/**
+ * Implementation of hook_requirements().
+ *
+ * @param string $phase
+ *    The phase.
+ *s
+ * @return array
+ *    Return the requirements array.
+ */
+function mapbox_block_requirements(string $phase): array {
+  $requirements = [];
+
+  switch ($phase) {
+    case 'install':
+    case 'runtime':
+      $plugin_detected = FALSE;
+
+      // Libraries path.
+      $libraries_path = 'libraries/mapbox-gl-js';
+      if (\Drupal::hasService('library.libraries_directory_file_finder')) {
+        /** @var \Drupal\Core\Asset\LibrariesDirectoryFileFinder $library_file_finder */
+        $library_file_finder = \Drupal::service('library.libraries_directory_file_finder');
+        $libraries_path = $library_file_finder->find('mapbox-gl-js');
+      }
+      elseif (function_exists('libraries_get_path')) {
+        $libraries_path = libraries_get_path('mapbox-gl-js');
+      }
+
+      // Check for required files.
+      if (file_exists('/' . $libraries_path . '/mapbox-gl.js') && file_exists('/' . $libraries_path . '/mapbox-gl.css')) {
+        $plugin_detected = TRUE;
+      }
+
+      // Was plugin detected?
+      if ($plugin_detected) {
+        $message = t('Mapbox plugin detected in %path', ['%path' => $libraries_path]);
+      }
+      else {
+        $message = t('Mapbox plugin was not found. Please download it here: https://github.com/mapbox/mapbox-gl-js and put the files in the root so that its path is: /libraries/mapbox-gl-js/mapbox-gl.js.');
+      }
+
+      // Set requirements.
+      $requirements['mapbox'] = [
+        'title' => t('Mapbox Plugin'),
+        'value' => $message,
+        'severity' => $plugin_detected ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+      ];
+      break;
+  }
+
+  return $requirements;
+}

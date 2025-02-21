@@ -1,0 +1,13 @@
+name: Mapbox Block
+type: module
+description: Provides a configurable block to display a Mapbox map.
+core_version_requirement: ^8.8 || ^9 || ^10
+configure: mapbox_block.config_form
+package: Mapbox
+dependencies:
+  - drupal:key
+
+# Information added by Drupal.org packaging script on 2022-08-03
+version: '1.0.1'
+project: 'mapbox_block'
+datestamp: 1659535302

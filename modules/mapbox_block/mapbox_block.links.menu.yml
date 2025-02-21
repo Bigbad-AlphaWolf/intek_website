@@ -1,0 +1,12 @@
+mapbox_block.config:
+  title: 'Mapbox Block'
+  route_name: mapbox_block.config_form
+  description: 'Mapbox Block settings'
+  parent: system.admin_config
+
+mapbox_block.settings:
+  title: 'Settings'
+  route_name: mapbox_block.config_form
+  description: 'Manage Mapbox Block settings'
+  parent: mapbox_block.config
+  weight: 1

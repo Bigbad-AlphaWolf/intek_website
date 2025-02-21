@@ -1,0 +1,120 @@
+.gsc-image-content{
+  &.skin-v1{
+    margin-left: auto;
+    margin-right: auto;    
+    @include media-breakpoint-down(md){
+      margin-bottom: 30px;
+      background: $white;
+      padding: 15px;
+    }
+    @include media-breakpoint-up(sm){
+      display: flex;
+    }
+    .image{
+      @include media-breakpoint-up(sm){
+        max-width: 50%;   
+        min-width: 172px;   
+        overflow: hidden;
+        margin-right: 30px;
+        margin-bottom: 0; 
+      }
+      margin-bottom: 20px;   
+    }   
+    .desc{
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 34px;
+    }  
+  }
+
+  &.skin-v2{
+    @include media-breakpoint-up(sm){
+      display: inline-flex;
+      align-items: center;
+      padding: 60px; 
+      max-width: 495px;    
+    }
+    padding: 30px;
+    background: $theme-color;
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border-top: 60px solid $theme-color;
+      border-left: 60px solid transparent;
+    }
+    .image{
+      @include media-breakpoint-up(sm){  
+        min-width: 120px; 
+        overflow: hidden;        
+        margin-bottom: 0; 
+          -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%;
+      }
+      margin-bottom: 20px;   
+    } 
+    @include media-breakpoint-up(sm){
+      .box-content{
+        padding-left: 30px;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%;
+      }
+    }
+    .title{
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 34px;
+      color: $white;
+    }
+  }
+  &.skin-v3{
+    position: relative;
+    .image{
+      position: relative;
+      display: inline-block;
+      &:after{
+        content: '';
+        background: rgba($theme-color, 0.2);
+        position: absolute;
+        @include size(100%, 100%);
+        top: 0;
+        left: 0;
+        z-index: 1;
+        @include transition(all 0.35s);
+        @include opacity(0);
+      }
+      
+      &:hover{
+        &:after{
+         @include opacity(1);
+        }
+      }
+    }
+    .title{
+      font-size: 24px;
+      font-weight: 600;
+      color: $black-2;
+    }
+    .box-content {
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      background: $white;
+      padding: 20px;
+      color: $black-2;
+      z-index: 9;
+      @include media-breakpoint-down(sm){
+        padding: 10px;
+      }
+    }
+    .read-more{
+      margin-top: 10px;  
+    }
+  }
+}

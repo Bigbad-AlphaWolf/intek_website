@@ -1,0 +1,5 @@
+<?php
+
+function inusti_subtheme_preprocess_html(&$variables) {
+  $variables['#attached']['library'][] = 'inusti_subtheme/inusti_subtheme.skin.default';
+}     

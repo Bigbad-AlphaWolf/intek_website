@@ -1,0 +1,7 @@
+mapbox_block.config_form:
+  path: '/admin/config/mapbox-block'
+  defaults:
+    _form: '\Drupal\mapbox_block\Form\MapBoxBlockSettingsForm'
+    _title: 'Mapbox Block Settings'
+  requirements:
+    _permission: 'administer mapbox_block'
