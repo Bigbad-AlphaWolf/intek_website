@@ -2,4 +2,9 @@ name: 'BigPipe test theme'
 type: theme
 base theme: stable
 description: 'Theme for testing BigPipe edge cases.'
-version: VERSION
+# version: VERSION
+
+# Information added by Drupal.org packaging script on 2023-03-15
+version: '9.4.12'
+project: 'drupal'
+datestamp: 1678901603

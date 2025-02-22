@@ -3,6 +3,11 @@ type: module
 description: 'Displays help topics provided by themes and modules.'
 package: Core (Experimental)
 lifecycle: experimental
-version: VERSION
+# version: VERSION
 dependencies:
   - drupal:help
+
+# Information added by Drupal.org packaging script on 2023-03-15
+version: '9.4.12'
+project: 'drupal'
+datestamp: 1678901603
