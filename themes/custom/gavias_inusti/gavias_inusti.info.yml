@@ -38,6 +38,6 @@ regions:
   copyright: 'Copyright'
   other: 'Other'
 
-version: '1.2.0'
-core_version_requirement: ^8.8 || ^9
+# version: '1.2.0'
+core_version_requirement: ^9 || ^10
 project: 'drupal'
