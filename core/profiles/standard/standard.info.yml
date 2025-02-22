@@ -7,7 +7,7 @@ install:
   - history
   - block
   - breakpoint
-  - ckeditor
+  - ckeditor5
   - config
   - comment
   - contextual
@@ -31,7 +31,6 @@ install:
   - toolbar
   - field_ui
   - file
-  - rdf
   - views
   - views_ui
   - tour
@@ -40,7 +39,7 @@ themes:
   - olivero
   - claro
 
-# Information added by Drupal.org packaging script on 2023-03-15
-version: '9.4.12'
+# Information added by Drupal.org packaging script on 2023-04-19
+version: '9.5.8'
 project: 'drupal'
-datestamp: 1678901602
+datestamp: 1681922719

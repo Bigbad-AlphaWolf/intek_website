@@ -8,8 +8,6 @@ libraries:
   - core/normalize
   - umami/global
   - umami/messages
-  - umami/webfonts-open-sans
-  - umami/webfonts-scope-one
 
 libraries-override:
   layout_builder/twocol_section:
@@ -65,10 +63,7 @@ regions:
   page_top: 'Page top' # Needed by Drupal Core
   page_bottom: 'Page bottom' # Needed by Drupal Core
 
-ckeditor_stylesheets:
-  - css/classy/components/media-embed-error.css
-
-# Information added by Drupal.org packaging script on 2023-03-15
-version: '9.4.12'
+# Information added by Drupal.org packaging script on 2023-04-19
+version: '9.5.8'
 project: 'drupal'
-datestamp: 1678901602
+datestamp: 1681922719

@@ -506,8 +506,8 @@ class XssTest extends TestCase {
   public function providerTestAttributes() {
     return [
       [
-        '<img src="http://example.com/foo.jpg" title="Example: title" alt="Example: alt">',
-        '<img src="http://example.com/foo.jpg" title="Example: title" alt="Example: alt">',
+        '<img src="http://example.com/foo.jpg" title="Example: title" alt="Example: alt" class="md:block">',
+        '<img src="http://example.com/foo.jpg" title="Example: title" alt="Example: alt" class="md:block">',
         'Image tag with alt and title attribute',
         ['img'],
       ],
@@ -534,6 +534,24 @@ class XssTest extends TestCase {
         '<a data-a2a-url="foo"></a>',
         'Link tag with numeric data attribute',
         ['a'],
+      ],
+      [
+        '<img src= onmouseover="script(\'alert\');">',
+        '<img>',
+        'Image tag with malformed SRC',
+        ['img'],
+      ],
+      [
+        'Body"></iframe><img/src="x"/onerror="alert(document.domain)"/><"',
+        'Body"&gt;<img />&lt;"',
+        'Image tag with malformed SRC',
+        ['img'],
+      ],
+      [
+        '<img/src="x"/onerror="alert(document.domain)"/>',
+        '<img />',
+        'Image tag with malformed SRC',
+        ['img'],
       ],
     ];
   }
