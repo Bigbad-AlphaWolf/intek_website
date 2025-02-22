@@ -784,5 +784,6 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
+  'isolation_level' => 'READ COMMITTED',
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_TlledbIS4xuejMZ5enNSVV175Uv99vLH1VydkXpQTXSx4_Ft_iW0KNUSLjD96-hp4jsnlhDLzg/sync';
